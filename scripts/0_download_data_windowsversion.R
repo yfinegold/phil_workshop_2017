@@ -32,10 +32,10 @@ library(dplyr)
 ############### DOWNLOAD WORKSHOP DATA
 ## change this to your username
 workshop_folder <- "C:/Users/finegold/Desktop/" 
-if(!file.exists(file.path(workshop_folder,"workshop_PHL_2017.zip"))){
+if(!file.exists(file.path(workshop_folder,"phil_workshop_2017.zip"))){
   download.file("https://www.dropbox.com/sh/kvambfjgcil2f79/AACDW66-t97Vf7f_pO4fiUKQa?dl=1",
-                file.path(workshop_folder,"workshop_PHL_2017.zip"),"auto",mode="wb")
-  unzip(file.path(workshop_folder,"workshop_PHL_2017.zip"),exdir=file.path(workshop_folder,"workshop_PHL_2017"))
+                file.path(workshop_folder,"phil_workshop_2017.zip"),"auto",mode="wb")
+  unzip(file.path(workshop_folder,"phil_workshop_2017.zip"),exdir=file.path(workshop_folder,"phil_workshop_2017"))
 }
 
 # Loading the input data for analysis ####
@@ -52,7 +52,7 @@ if(!file.exists(file.path(workshop_folder,"workshop_PHL_2017.zip"))){
 
 
 ############### SET WORKING ENVIRONMENT
-rootdir <- paste0(workshop_folder,"workshop_PHL_2017")
+rootdir <- paste0(workshop_folder,"phil_workshop_2017/data")
 
 
 setwd(rootdir)
