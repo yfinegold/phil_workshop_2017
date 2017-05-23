@@ -129,6 +129,22 @@ system(sprintf("oft-stat -i %s -o %s -um %s -nostd -maxval %s" ,
                "change_0310.tif",
                22
 ))
+
+#################### RECLASSIFY THE CHANGE RASTER
+system(sprintf("(echo %s; echo 1; echo 1; echo 2; echo 0) | oft-reclass -oi  %s  %s",
+               "reclass.txt",
+               "tmp_0310.tif",
+               "change_0310.tif"
+))
+
+#################### COMPRESS RESULTS
+system(sprintf("gdal_translate -ot byte -co COMPRESS=LZW %s %s",
+               "tmp_0310.tif",
+               "change_0310_final.tif"))
+
+#################### DELETE TEMP FILES
+system(sprintf(paste0("rm tmp*.tif")))
+
 # ?freq
 # stats_change <- freq(change0310)
 # write.csv(stats_change,'stats_change.csv')
