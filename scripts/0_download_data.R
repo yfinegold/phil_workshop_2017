@@ -41,20 +41,20 @@ library(dplyr)
 
 ## Loading the input data for analysis ####
 ## Linux version
+
 list <- list.files("~/workshop_PHL_2017/data")
 is.na(list)
 if(length(list)==0){
-  setwd('~/')
-  system("wget https://www.dropbox.com/sh/kvambfjgcil2f79/AACDW66-t97Vf7f_pO4fiUKQa?dl=1")
-  system('mv AACDW66-t97Vf7f_pO4fiUKQa?dl=1 workshop_PHL_2017.zip')
-  system('unzip workshop_PHL_2017.zip -d workshop_PHL_2017')
-  system('unzip data/landcover_2003_2010_IPCC.zip -d data')
+  setwd('~/workshop_PHL_2017/data')
+  system("wget https://www.dropbox.com/s/v9f11umprbxpr9c/landcover_2003_2010_IPCC.zip?dl=0")
+  system('mv landcover_2003_2010_IPCC.zip?dl=0 landcover_2003_2010_IPCC.zip')
+  system('unzip landcover_2003_2010_IPCC.zip')
 }
 
 
 
 ############### SET WORKING ENVIRONMENT
-rootdir <- paste0(workshop_folder,"workshop_PHL_2017")
+rootdir <- paste0('~/workshop_PHL_2017/data')
 
 
 setwd(rootdir)
